@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const ObjectId = mongoose.Types.ObjectId;
 import { User } from "../route.js";
 // import session from 'express-session';
-const db_string = `mongodb+srv://AravindPrakash:wowmaker@imgur-b.2l8iu.mongodb.net/imgur-b?retryWrites=true&w=majority`;
+const db_string = `mongodb+srv://AravindPrakash:wowmaker@imgur.2l8iu.mongodb.net/imgur-b?retryWrites=true&w=majority`;
 const router = Router();
 router
   .get("/", (request, response) => {

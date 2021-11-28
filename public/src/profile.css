@@ -1,27 +1,53 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body{
     background-color: white;
   }
   figure{
-    border: 2px solid yellow;
+    border: 2px solid white;
     margin: auto;
-    width: fit-content;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(131, 131, 131);
+    position: relative;
+    left: -36%;
   }
   figure>img{
-    max-width: 200px;
+    max-width: 150px;
+    margin-top: 10px;
+    position: relative;
+    left: 25px;
   }
   figcaption{
+    font-family: 'Poppins', sans-serif;
     text-align: center;
+    color: white;
+    font-size: 20px;
   }
   footer{
     padding: 2rem;
     text-align: center;
+    position: relative;
+    left: 2%;
   }
-  footer>a{
+  #footer1{
     padding: 6px 12px;
-    border: 2px solid blueviolet;
-    color: blueviolet;
+    border: 1px solid skyblue;
+    background-color: skyblue;
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    font-family: monospace;
+    font-family: 'Poppins', sans-serif;
+  }
+  #footer2{
+    padding: 6px 12px;
+    border: 1px solid skyblue;
+    background-color: skyblue;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #profile{
+    display: flex;
   }

@@ -31,16 +31,16 @@
         </div>
         <div class="form-example2">
         <button id="submitbtn">sign up</button>
-      </div>
-        <% if(err) {%> 
-        <mark class="red" title="click to close error"><%=  err  %></mark>
-        <% } %> 
+      </div> 
       </form>
-      <div>
+      <div class="submitbtn">
       <span id="loginmsg">
        <P>Already have an account?<a href="/login">click here</a></P>
       </span>
     </div>
+    <% if(err) {%> 
+      <mark class="error1" title="click to close error"><%=  err  %></mark>
+      <% } %>
     </fieldset>
   </div>
   <h2>

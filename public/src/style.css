@@ -19,17 +19,17 @@ legend {
     position: relative;
     left: 40%;
     box-shadow: 1px 1px 4px black;
-    background-color: rgba(0, 128, 0, 0.199);
+    background-color: #8b8a8a33;
 }
 .fieldset2{
     border: 1px solid gray;
     width: 250px;
-    height: 150px;
+    height: 200px;
     margin-top: 100px;
     position: relative;
     left: 40%;
     box-shadow: 1px 1px 4px black;
-    background-color: rgba(0, 128, 0, 0.199);
+    background-color: #8b8a8a33;
 }
 .form-example1{
     padding: 10px;
@@ -44,6 +44,7 @@ legend {
     margin-top: 5px;
 }
 #submitbtn{
+    font-family: 'Poppins', sans-serif;
     border: 0px solid black;
     border-radius: 10px;
     padding: 10px;
@@ -59,4 +60,18 @@ p{
     position: relative;
     left: 20px;
     top: 10px;
+}
+.error1{
+    background-color:transparent;
+    color: rgb(148, 10, 10);
+    position: relative;
+    left: 12%;
+    font-family: 'Poppins', sans-serif;
+}
+.error2{
+    background-color:transparent;
+    color: rgb(148, 10, 10);
+    position: relative;
+    left: 25%;
+    font-family: 'Poppins', sans-serif;
 }

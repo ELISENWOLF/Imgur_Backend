@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import session from "express-session";
 const { Schema, model } = mongoose;
 import bcrypt from "bcrypt";
-const db_string = `mongodb+srv://AravindPrakash:wowmaker@imgur-b.2l8iu.mongodb.net/imgur-b?retryWrites=true&w=majority`;
+const db_string = `mongodb+srv://AravindPrakash:wowmaker@imgur.2l8iu.mongodb.net/imgur-b?retryWrites=true&w=majority`;
 // MongoDB Database Schema
 const userSchema = new Schema({
   user: {
