@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" type="text/css">
-    <script src = "./login.js" defer></script> 
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>imgur</title>
+  <link rel="stylesheet" href="src/style.css">
+  <script src="src/script.js"></script>
 </head>
 <body>
-  <fieldset class="fieldset2">
-    <legend>Login</legend>
-    <form action="/" method="post" class="form-example" target="_parent">        
+  <div id="root">
+    <fieldset class="fieldset2">
+      <legend>Login</legend>
+      <br><br>
+      <form action="/login" method="post">
+        <div class="form1">
+          <input name="user" type="text" id="username" value="user" autofocus 
+          placeholder="Username" required autocomplete="off"/>
+        </div>
           <div class="form1">
-            <input type="text" name="name" id="name" placeholder="username" required>
-          </div>
-          <div class="form1">
-            <input type="password" name="password" id="password" placeholder="password" required>
-          </div>
-          <div id="form2">
-            <input type="submit" id="submitbtn" value="Login">
-          </div>
-          <div id="form3">
-           <p>Don't have an account? <a href="/">Sign up</a></p>
-          </div>
-    </form>
-  </fieldset>
+          <input name="pass" type="password" id="password" value="passme" 
+          placeholder="Password" required autocomplete="off"/>
+        </div>
+        <div class="form2">
+          <button id="submitbtn">login</button>
+        </div>
+        <% if(err) {%> 
+        <mark class="red" title="click to close error"><%=  err  %></mark>
+        <% } %> 
+      </form>
+      <div>
+      <span id="loginmsg">
+      <p>Don't have an account?<a href="/">Sign up</a></p>
+      </span>
+    </div>
+    </fieldset>
+  </div>
+  <h2>
+  </h2>
 </body>
 </html>

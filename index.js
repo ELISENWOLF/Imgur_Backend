@@ -1,45 +1,17 @@
-await import("dotenv").then(dotenv => dotenv.config());
-import {default as express} from "express";
-import mongoose from "mongoose";
-import bcrypt from "bcrypt"
-import { join, resolve } from "path";
-const {PORT, HOST } = process.env; 
-const server = express(); 
-server.use(express.static("public"));
-
-server.set("view engine", "ejs");
-server.set("views", "public");
-
-server.use(express.urlencoded({extended:true}));
-
-const db = `mongodb+srv://AravindPrakash:wowmaker@imgur-b.2l8iu.mongodb.net/imgur-b?retryWrites=true&w=majority`;
-mongoose.connect(db).then(_ => {
-    console.log("db connected ")
-})
-
-server.get("/",(req, res) =>{
-    res.render(join(resolve(), "/public/index"));
-});
-
-server.get("/login",(req, res) =>{
-    res.render(join(resolve(), "/public/login"));
-});
-
-const newUser = {
-    name:String,
-    password:String
-}
-
-let Users = mongoose.model("Users", newUser);
-
-server.post("/",async (req,res) => {
-    let newUsers = new Users({
-        name: req.body.name,
-        password: req.body.password
-    });
-    newUsers.save();
-    res.send(`Hello, ${newUsers.name}`);
-    res.redirect('/');
-});
-server.listen(PORT, HOST, console.log(`Listening on port ${PORT}`));
-
+await import("dotenv").then((dotenv) => dotenv.config());
+const { HOST, PORT } = process.env;
+import { default as express } from "express";
+import session from "express-session";
+import { routes } from "./route.js";
+import { profile } from "./routes/profile.js";
+const server = express();
+server
+  .use(express.urlencoded({ extended: true }))
+  .use(session({secret: 'not a good secret', resave: true, saveUninitialized: true}))
+  .use(express.static("public"))
+  .set("view engine", "ejs")
+  .set("views", "public")
+  .use("/",routes)
+  .use("/profile", profile);
+  server.listen(PORT, HOST, console.log(`Listening on port ${PORT}:${PORT}`));
+ 
