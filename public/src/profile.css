@@ -47,7 +47,15 @@ body{
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
   }
-
+  #footer3{
+    padding: 6px 12px;
+    border: 1px solid skyblue;
+    background-color: skyblue;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
   #profile{
     display: flex;
   }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Document</title>
+</head>
+<body id="body">
+  <img src="./src/img/imgur logo.jpg" id="img">
+  <form action="/" method="post" id="imgur_form">
+    <input type="file" name="file" id="fileUpload">
+  </form>
+  <div id="output"></div>
+  <script>
+      // 'Authorization': 'Client-ID e86892e30f94c31'
+      // https://api.imgur.com/3/image
+      // https://api.imgur.com/3/upload
+      document.getElementById('fileUpload').addEventListener('change', event => {
+        let file = event.target.files[0];
+        let formData = new FormData();
+        formData.append('file', file);
+        fetch('https://api.imgur.com/3/upload', {
+          method: 'post',
+          mode: 'cors',
+          type: 'cors',
+          headers: { 
+            'Authorization': 'Client-ID 2fb80e16e739310',
+            'Authorization': 'Bearer e6b81052ba0e7d8bea59bb928f1c8fe126b42e61'
+          },
+          body: formData
+        }).then(data=>data.json())
+        .then(data=>{
+          console.log(data);
+          document.getElementById('output').innerText = JSON.stringify(data);
+        })
+        .catch(err=>{
+          console.log('baaad');
+          console.log('error occured', err);
+          document.getElementById('output').innerText = err.message;
+        })
+      })
+  </script>
+  <p id="inc">© 2021 GitHub, Inc.</p>
+</body>
+</html>

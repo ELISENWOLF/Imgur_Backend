@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 legend {
     padding: 0.2rem;
     text-transform: uppercase;
@@ -74,4 +75,49 @@ p{
     position: relative;
     left: 25%;
     font-family: 'Poppins', sans-serif;
+}
+#body{
+    background-color: rgb(44, 43, 43);
+}
+#imgur_form{
+    position: relative;
+    left: 25%;
+    top: 50%;
+    width: 800px;
+    height: 300px;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background-image: url(./img/hand-painted-watercolor-background.jpg);
+    box-shadow: 4px 3px 3px black;
+    
+}
+#img{
+    width: 200px;
+    position: relative;
+    left: 45%;
+    margin-bottom: 10px;
+}
+#fileUpload{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    left: 10%;
+    margin-top: 140px;
+    font-size: 15px;
+    font-weight: bold;
+}
+#inc{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    position: relative;
+    left: 46%;
+}
+#output{
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    bottom: 130px;
+    left: 50%;
+    font-size: 15px;
+    font-weight: bold;
 }
