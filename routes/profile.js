@@ -4,7 +4,7 @@ const ObjectId = mongoose.Types.ObjectId;
 import { User } from "../route.js";
 // import session from 'express-session';
 import imgur from "imgur";
-const clientId = `2fb80e16e739310`;
+const clientId = `065b977c9d3b24a`;
 imgur.setClientId(clientId);
 imgur.setAPIUrl("https://api.imgur.com/3/upload");
 import fs from "fs";
