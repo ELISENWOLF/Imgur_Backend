@@ -8,20 +8,32 @@
   <title>
     <%  %>
   </title>
+  <script>
+    document.addEventListener('DOMContentLoaded', event=>{
+      document.querySelector('#fileupload').addEventListener('change', ()=>{
+        document.forms[0].submit();
+        // console.log('sending file to server');
+      })
+    })
+  </script>
 </head>
 <body>
   <div id="root">
     <div id="profile">
       <figure>
-        <img src="src/img/user.png" alt="user">
+        <!-- <img src="src/img/user.png" alt="user"> -->
+        <img src="<%= pic %>" alt="user">
         <figcaption>
           <%= name %> 
         </figcaption>
       </figure>
+      <form action="/profile" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="fileupload" >
+        <!-- <button>upload</button> -->
+      </form>
       <footer>
         <a href="/" id="footer1">home</a>
         <a href="profile/logout" id="footer2">logout</a>
-        <a href="./test.html" id="footer3">Upload</a>
       </footer>
     </div>
   </div>

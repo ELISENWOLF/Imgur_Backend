@@ -4,11 +4,13 @@ import { default as express } from "express";
 import session from "express-session";
 import { routes } from "./route.js";
 import { profile } from "./routes/profile.js";
+import cors from "cors";
 const server = express();
 server
   .use(express.urlencoded({ extended: true }))
   .use(session({secret: 'not a good secret', resave: true, saveUninitialized: true}))
   .use(express.static("public"))
+  .use(cors())
   .set("view engine", "ejs")
   .set("views", "public")
   .use("/",routes)

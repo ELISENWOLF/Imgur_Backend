@@ -5,6 +5,12 @@ const { Schema, model } = mongoose;
 import bcrypt from "bcrypt";
 const db_string = `mongodb+srv://AravindPrakash:wowmaker@imgur.2l8iu.mongodb.net/imgur-b?retryWrites=true&w=majority`;
 // MongoDB Database Schema
+const profileSchema = new Schema({
+  firstName: String,
+  lastName: String,
+  pic: String,
+  about: String
+})
 const userSchema = new Schema({
   user: {
     type: String,
@@ -14,6 +20,7 @@ const userSchema = new Schema({
     type: String,
     required: [true, "you must provide a password"],
   },
+  profile: [profileSchema]
 });
 const User = model("User", userSchema);
 const router = Router();
