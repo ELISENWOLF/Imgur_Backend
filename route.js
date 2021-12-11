@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import session from "express-session";
 const { Schema, model } = mongoose;
 import bcrypt from "bcrypt";
-const db_string = `mongodb+srv://AravindPrakash:wowmaker@imgur.2l8iu.mongodb.net/imgur-b?retryWrites=true&w=majority`;
+const db_string = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@imgur.2l8iu.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
 // MongoDB Database Schema
 const profileSchema = new Schema({
   firstName: String,

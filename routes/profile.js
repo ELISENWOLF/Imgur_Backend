@@ -6,7 +6,7 @@ const upload = multer({ storage: ImgurStorage({ clientId }) });
 import mongoose from "mongoose";
 const ObjectId = mongoose.Types.ObjectId;
 import { User } from "../route.js";
-const db_string = `mongodb+srv://AravindPrakash:wowmaker@imgur.2l8iu.mongodb.net/imgur-b?retryWrites=true&w=majority`;
+const db_string = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@imgur.2l8iu.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
 const router = Router();
 router
   .get("/", (request, response) => {
